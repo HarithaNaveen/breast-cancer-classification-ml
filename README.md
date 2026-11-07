@@ -13,6 +13,7 @@ This project focuses on building and evaluating machine learning classification 
 - **Target classes:**
   - `0` – Malignant
   - `1` – Benign
+**Test data:** `Data/test_data.csv`
 
 ## Machine Learning Algorithms
 

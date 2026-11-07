@@ -4,8 +4,6 @@
 
 This project focuses on building and evaluating machine learning classification models to predict whether a breast tumour is **Malignant (0)** or **Benign (1)** using the Breast Cancer Wisconsin (Diagnostic) dataset.
 
-This project was developed as part of the Machine Learning course in the M.Tech Artificial Intelligence and Machine Learning programme at BITS Pilani (WILP).
-
 ## Dataset
 
 - **Dataset:** Breast Cancer Wisconsin (Diagnostic)
@@ -34,7 +32,8 @@ The following classification algorithms were implemented and compared:
 4. Standardize features using `StandardScaler`.
 5. Train and evaluate five classification models.
 6. Compare model performance using multiple evaluation metrics.
-7. Generate confusion matrices and select the best-performing model.
+7. Generate confusion matrices and ROC curves.
+8. Verify saved model predictions.
 
 ## Evaluation Metrics
 
@@ -47,9 +46,35 @@ The following classification algorithms were implemented and compared:
 
 ## Results
 
-Logistic Regression and Support Vector Machine achieved the highest accuracy in the current experiment. Logistic Regression had a marginally higher AUC.
+The performance of all five classification models was evaluated using the test dataset.
 
-The detailed model comparison and confusion matrices are available in the Jupyter Notebook.
+### Model Performance Comparison
+
+| Model | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
+|---|---:|---:|---:|---:|---:|---:|
+| Logistic Regression | 0.9825 | 0.9954 | 0.9861 | 0.9861 | 0.9861 | 0.9623 |
+| Decision Tree | 0.9123 | 0.9157 | 0.9559 | 0.9028 | 0.9286 | 0.8174 |
+| KNN | 0.9561 | 0.9788 | 0.9589 | 0.9722 | 0.9655 | 0.9054 |
+| Naive Bayes | 0.9298 | 0.9868 | 0.9444 | 0.9444 | 0.9444 | 0.8492 |
+| SVM | 0.9825 | 0.9950 | 0.9861 | 0.9861 | 0.9861 | 0.9623 |
+
+### Model Evaluation Visualizations
+
+The following visualizations were generated to evaluate and compare model performance:
+
+- [Confusion Matrices](Results/confusion_matrices.png)
+- [ROC Curves](Results/roc_curves.png)
+- [Detailed Model Comparison CSV](Results/model_comparison.csv)
+
+### Observations and Conclusion
+
+- Logistic Regression and SVM achieved the highest accuracy of **98.25%**.
+- Logistic Regression achieved the highest AUC of **0.9954**, indicating excellent class discrimination.
+- Both models achieved an MCC score of **0.9623**, indicating strong classification performance.
+- KNN also demonstrated good performance with an accuracy of **95.61%**.
+- Decision Tree achieved the lowest accuracy among the five models.
+
+Based on the evaluation metrics, **Logistic Regression is selected as the best-performing model**, with SVM showing comparable performance.
 
 ## Technologies Used
 
@@ -60,6 +85,7 @@ The detailed model comparison and confusion matrices are available in the Jupyte
 - Seaborn
 - Scikit-learn
 - Google Colab
+- Streamlit
 
 ## How to Run
 
@@ -72,3 +98,4 @@ The detailed model comparison and confusion matrices are available in the Jupyte
    ```
 
 4. Run the notebook cells sequentially.
+
